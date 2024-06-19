@@ -1,3 +1,34 @@
 [gd_scene format=3 uid="uid://ckdxkkjd7g0ij"]
 
 [node name="Main page" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Play" type="Button" parent="."]
+offset_left = -96.0
+offset_top = -64.0
+offset_right = -16.0
+offset_bottom = -16.0
+text = "Play"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 16.0
+offset_top = -64.0
+offset_right = 96.0
+offset_bottom = -16.0
+text = "Quit"
+
+[node name="Settings" type="Button" parent="."]
+offset_left = -96.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = 64.0
+text = "Settings"
+
+[node name="Credits" type="Button" parent="."]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 96.0
+offset_bottom = 64.0
+text = "Credits
+"
