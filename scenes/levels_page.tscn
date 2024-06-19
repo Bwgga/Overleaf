@@ -1,5 +1,101 @@
-[gd_scene format=3 uid="uid://ibq485h7cn8w"]
+[gd_scene load_steps=2 format=3 uid="uid://ibq485h7cn8w"]
+
+[ext_resource type="FontFile" uid="uid://dkcdht4s7cl25" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="1_gbdfo"]
 
 [node name="Levels page" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Level Buttons" type="Node" parent="."]
+
+[node name="Demo Level" type="Button" parent="Level Buttons"]
+offset_left = -448.0
+offset_top = -192.0
+offset_right = -320.0
+offset_bottom = -128.0
+theme_override_fonts/font = ExtResource("1_gbdfo")
+text = "Demo"
+
+[node name="Level 1" type="Button" parent="Level Buttons"]
+offset_left = -192.0
+offset_top = -192.0
+offset_right = -64.0
+offset_bottom = -128.0
+theme_override_fonts/font = ExtResource("1_gbdfo")
+text = "Level 1"
+
+[node name="Level 2" type="Button" parent="Level Buttons"]
+offset_left = 64.0
+offset_top = -192.0
+offset_right = 192.0
+offset_bottom = -128.0
+theme_override_fonts/font = ExtResource("1_gbdfo")
+text = "Level 2"
+
+[node name="Level 3" type="Button" parent="Level Buttons"]
+offset_left = 320.0
+offset_top = -192.0
+offset_right = 448.0
+offset_bottom = -128.0
+theme_override_fonts/font = ExtResource("1_gbdfo")
+text = "Level 3"
+
+[node name="Level 4" type="Button" parent="Level Buttons"]
+offset_left = -448.0
+offset_top = -64.0
+offset_right = -320.0
+theme_override_fonts/font = ExtResource("1_gbdfo")
+text = "Level 1"
+
+[node name="Level 5" type="Button" parent="Level Buttons"]
+offset_left = -192.0
+offset_top = -64.0
+offset_right = -64.0
+theme_override_fonts/font = ExtResource("1_gbdfo")
+text = "Level 1"
+
+[node name="Level 6" type="Button" parent="Level Buttons"]
+offset_left = 64.0
+offset_top = -64.0
+offset_right = 192.0
+theme_override_fonts/font = ExtResource("1_gbdfo")
+text = "Level 1"
+
+[node name="Level 7" type="Button" parent="Level Buttons"]
+offset_left = 320.0
+offset_top = -64.0
+offset_right = 448.0
+theme_override_fonts/font = ExtResource("1_gbdfo")
+text = "Level 1"
+
+[node name="Level 8" type="Button" parent="Level Buttons"]
+offset_left = -448.0
+offset_top = 64.0
+offset_right = -320.0
+offset_bottom = 128.0
+theme_override_fonts/font = ExtResource("1_gbdfo")
+text = "Level 1"
+
+[node name="Level 9" type="Button" parent="Level Buttons"]
+offset_left = -192.0
+offset_top = 64.0
+offset_right = -64.0
+offset_bottom = 128.0
+theme_override_fonts/font = ExtResource("1_gbdfo")
+text = "Level 1"
+
+[node name="Level 10" type="Button" parent="Level Buttons"]
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 192.0
+offset_bottom = 128.0
+theme_override_fonts/font = ExtResource("1_gbdfo")
+text = "Level 1"
+
+[node name="Level 11" type="Button" parent="Level Buttons"]
+offset_left = 320.0
+offset_top = 64.0
+offset_right = 448.0
+offset_bottom = 128.0
+theme_override_fonts/font = ExtResource("1_gbdfo")
+text = "Level 1"
