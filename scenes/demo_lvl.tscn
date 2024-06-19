@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://dgadb3slcv0m0"]
+[gd_scene load_steps=14 format=3 uid="uid://dgadb3slcv0m0"]
 
 [ext_resource type="PackedScene" uid="uid://bi0b8kon5i34h" path="res://scenes/game.tscn" id="1_uc1ry"]
 [ext_resource type="PackedScene" uid="uid://da32pk1hqejhn" path="res://scenes/player.tscn" id="2_t1e6b"]
 [ext_resource type="PackedScene" uid="uid://b2jlt4fjomusb" path="res://scenes/grass_platfrom.tscn" id="3_2jai2"]
+[ext_resource type="PackedScene" uid="uid://d0ii1kyw08agv" path="res://scenes/coin.tscn" id="4_vhtng"]
 
 [sub_resource type="Animation" id="Animation_1hjaq"]
 resource_name = "move"
@@ -159,3 +160,42 @@ libraries = {
 "": SubResource("AnimationLibrary_xhwni")
 }
 autoplay = "move"
+
+[node name="Coin" parent="." index="4" instance=ExtResource("4_vhtng")]
+position = Vector2(72, -56)
+
+[node name="Coin2" parent="." index="5" instance=ExtResource("4_vhtng")]
+position = Vector2(104, -72)
+
+[node name="Coin3" parent="." index="6" instance=ExtResource("4_vhtng")]
+position = Vector2(232, -40)
+
+[node name="Coin4" parent="." index="7" instance=ExtResource("4_vhtng")]
+position = Vector2(72, 24)
+
+[node name="Coin5" parent="." index="8" instance=ExtResource("4_vhtng")]
+position = Vector2(176, 24)
+
+[node name="Coin6" parent="." index="9" instance=ExtResource("4_vhtng")]
+position = Vector2(504, -24)
+
+[node name="Coin7" parent="." index="10" instance=ExtResource("4_vhtng")]
+position = Vector2(296, -8)
+
+[node name="Coin8" parent="." index="11" instance=ExtResource("4_vhtng")]
+position = Vector2(-232, -8)
+
+[node name="Coin9" parent="." index="12" instance=ExtResource("4_vhtng")]
+position = Vector2(-296, -40)
+
+[node name="Coin10" parent="." index="13" instance=ExtResource("4_vhtng")]
+position = Vector2(-312, 72)
+
+[node name="Coin11" parent="." index="14" instance=ExtResource("4_vhtng")]
+position = Vector2(-280, 88)
+
+[node name="Coin12" parent="." index="15" instance=ExtResource("4_vhtng")]
+position = Vector2(-296, 72)
+
+[node name="Coin13" parent="." index="16" instance=ExtResource("4_vhtng")]
+position = Vector2(-272, 104)
