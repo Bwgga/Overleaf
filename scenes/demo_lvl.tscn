@@ -130,6 +130,7 @@ position = Vector2(0, -16)
 [node name="Camera2D" type="Camera2D" parent="Player" index="2"]
 position = Vector2(0, 16)
 zoom = Vector2(4, 4)
+limit_bottom = 120
 position_smoothing_enabled = true
 
 [node name="Grass Platforms" type="Node2D" parent="." index="3"]
