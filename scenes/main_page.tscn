@@ -41,4 +41,5 @@ theme_override_fonts/font = ExtResource("1_r5t2c")
 text = "Credits
 "
 
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
