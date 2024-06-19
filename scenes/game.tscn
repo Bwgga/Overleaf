@@ -423,6 +423,7 @@ tile_set = SubResource("TileSet_x3iia")
 format = 2
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 150)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("WorldBoundaryShape2D_yw6e3")
