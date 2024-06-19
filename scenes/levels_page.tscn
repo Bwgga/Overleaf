@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://ibq485h7cn8w"]
+[gd_scene load_steps=3 format=3 uid="uid://ibq485h7cn8w"]
 
+[ext_resource type="Script" path="res://scripts/levels_page.gd" id="1_fetbp"]
 [ext_resource type="FontFile" uid="uid://dkcdht4s7cl25" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="1_gbdfo"]
 
 [node name="Levels page" type="Node2D"]
+script = ExtResource("1_fetbp")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -99,3 +101,5 @@ offset_right = 448.0
 offset_bottom = 128.0
 theme_override_fonts/font = ExtResource("1_gbdfo")
 text = "Level 1"
+
+[connection signal="pressed" from="Level Buttons/Demo Level" to="." method="_on_demo_level_pressed"]
