@@ -1,34 +1,40 @@
-[gd_scene format=3 uid="uid://ckdxkkjd7g0ij"]
+[gd_scene load_steps=2 format=3 uid="uid://ckdxkkjd7g0ij"]
+
+[ext_resource type="FontFile" uid="uid://dkcdht4s7cl25" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="1_r5t2c"]
 
 [node name="Main page" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Play" type="Button" parent="."]
-offset_left = -96.0
-offset_top = -64.0
-offset_right = -16.0
-offset_bottom = -16.0
+offset_left = -120.0
+offset_top = -56.0
+offset_right = -8.0
+offset_bottom = -8.0
+theme_override_fonts/font = ExtResource("1_r5t2c")
 text = "Play"
 
 [node name="Quit" type="Button" parent="."]
-offset_left = 16.0
-offset_top = -64.0
-offset_right = 96.0
-offset_bottom = -16.0
+offset_left = 8.0
+offset_top = -56.0
+offset_right = 120.0
+offset_bottom = -8.0
+theme_override_fonts/font = ExtResource("1_r5t2c")
 text = "Quit"
 
 [node name="Settings" type="Button" parent="."]
-offset_left = -96.0
-offset_top = 16.0
-offset_right = -16.0
-offset_bottom = 64.0
+offset_left = -120.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 56.0
+theme_override_fonts/font = ExtResource("1_r5t2c")
 text = "Settings"
 
 [node name="Credits" type="Button" parent="."]
-offset_left = 16.0
-offset_top = 16.0
-offset_right = 96.0
-offset_bottom = 64.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 120.0
+offset_bottom = 56.0
+theme_override_fonts/font = ExtResource("1_r5t2c")
 text = "Credits
 "
