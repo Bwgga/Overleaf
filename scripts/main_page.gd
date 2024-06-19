@@ -1,6 +1,9 @@
 extends Node2D
 
 
+# Play button
 
+
+# Quit button
 func _on_quit_pressed():
-	pass # Replace with function body.
+	get_tree().quit()

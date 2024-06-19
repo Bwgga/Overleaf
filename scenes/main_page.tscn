@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://ckdxkkjd7g0ij"]
+[gd_scene load_steps=3 format=3 uid="uid://ckdxkkjd7g0ij"]
 
+[ext_resource type="Script" path="res://scripts/main_page.gd" id="1_lbto3"]
 [ext_resource type="FontFile" uid="uid://dkcdht4s7cl25" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="1_r5t2c"]
 
 [node name="Main page" type="Node2D"]
+script = ExtResource("1_lbto3")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -38,3 +40,5 @@ offset_bottom = 56.0
 theme_override_fonts/font = ExtResource("1_r5t2c")
 text = "Credits
 "
+
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
