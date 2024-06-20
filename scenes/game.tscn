@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bi0b8kon5i34h"]
+[gd_scene load_steps=8 format=3 uid="uid://bi0b8kon5i34h"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_emxst"]
 [ext_resource type="Texture2D" uid="uid://c13vfyna2c56e" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_kdfst"]
 [ext_resource type="PackedScene" uid="uid://dbuaq7wiywak2" path="res://scenes/killzone.tscn" id="2_q3n0e"]
+[ext_resource type="FontFile" uid="uid://dkcdht4s7cl25" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="4_xn5fq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3uco4"]
 texture = ExtResource("1_kdfst")
@@ -436,3 +437,15 @@ layer_1/tile_data = PackedInt32Array()
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 position = Vector2(0, 150)
 shape = SubResource("WorldBoundaryShape2D_yw6e3")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Stats" type="Label" parent="UI"]
+offset_right = 65.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.12185, 0.226634, 0.257714, 1)
+theme_override_fonts/font = ExtResource("4_xn5fq")
+theme_override_font_sizes/font_size = 8
+text = "Coins: 0"
+autowrap_mode = 2
+text_overrun_behavior = 3

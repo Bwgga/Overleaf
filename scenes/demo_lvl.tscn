@@ -139,20 +139,6 @@ position = Vector2(0, -8)
 limit_bottom = 120
 position_smoothing_enabled = true
 
-[node name="Stats" type="Label" parent="Player/Camera2D" index="0"]
-show_behind_parent = true
-offset_left = -152.0
-offset_top = -80.0
-offset_right = -96.0
-offset_bottom = -56.0
-theme_override_colors/font_color = Color(0.12185, 0.226634, 0.257714, 1)
-theme_override_fonts/font = ExtResource("6_p1hrw")
-theme_override_font_sizes/font_size = 8
-text = "Coins: 0"
-horizontal_alignment = 1
-autowrap_mode = 2
-text_overrun_behavior = 3
-
 [node name="Grass Platforms" type="Node2D" parent="." index="3"]
 
 [node name="Grass_Platfrom" parent="Grass Platforms" index="0" instance=ExtResource("3_2jai2")]
