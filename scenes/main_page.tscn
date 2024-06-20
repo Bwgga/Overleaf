@@ -8,17 +8,17 @@
 position = Vector2(144, 8)
 script = ExtResource("1_lbto3")
 
+[node name="Paralax BG" parent="." instance=ExtResource("3_mo31y")]
+scroll_offset = Vector2(100, 0)
+scroll_limit_begin = Vector2(0, -56)
+scroll_limit_end = Vector2(320, 130)
+
 [node name="Camera2D" type="Camera2D" parent="."]
 process_mode = 3
 position = Vector2(-144, -56)
 anchor_mode = 0
 limit_smoothed = true
 position_smoothing_enabled = true
-
-[node name="Paralax BG" parent="Camera2D" instance=ExtResource("3_mo31y")]
-scroll_offset = Vector2(100, 0)
-scroll_limit_begin = Vector2(0, -56)
-scroll_limit_end = Vector2(320, 130)
 
 [node name="Play" type="Button" parent="."]
 offset_left = -80.0

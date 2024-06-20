@@ -10,5 +10,5 @@ func _on_quit_pressed():
 	get_tree().quit()
 
 func _process(delta):
-	get_node("Camera2D/Paralax BG").scroll_offset.x -= 100 * delta
+	get_node("Paralax BG").scroll_offset.x -= 100 * delta
 
