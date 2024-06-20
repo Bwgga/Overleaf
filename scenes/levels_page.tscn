@@ -11,95 +11,27 @@ script = ExtResource("1_fetbp")
 [node name="Level Buttons" type="Node" parent="."]
 
 [node name="Demo Level" type="Button" parent="Level Buttons"]
-offset_left = -448.0
-offset_top = -192.0
-offset_right = -320.0
-offset_bottom = -128.0
+anchors_preset = -1
+anchor_left = -0.35
+anchor_top = -0.267
+anchor_right = -0.05
+anchor_bottom = -0.089
+offset_top = 0.0600052
+offset_bottom = 0.0200005
 theme_override_fonts/font = ExtResource("1_gbdfo")
 text = "Demo"
+metadata/_edit_use_anchors_ = true
 
 [node name="Level 1" type="Button" parent="Level Buttons"]
-offset_left = -192.0
-offset_top = -192.0
-offset_right = -64.0
-offset_bottom = -128.0
+anchors_preset = -1
+anchor_left = 0.075
+anchor_top = -0.267
+anchor_right = 0.375
+anchor_bottom = -0.089
+offset_top = 0.0600052
+offset_bottom = 0.0200005
 theme_override_fonts/font = ExtResource("1_gbdfo")
 text = "Level 1"
-
-[node name="Level 2" type="Button" parent="Level Buttons"]
-offset_left = 64.0
-offset_top = -192.0
-offset_right = 192.0
-offset_bottom = -128.0
-theme_override_fonts/font = ExtResource("1_gbdfo")
-text = "Level 2"
-
-[node name="Level 3" type="Button" parent="Level Buttons"]
-offset_left = 320.0
-offset_top = -192.0
-offset_right = 448.0
-offset_bottom = -128.0
-theme_override_fonts/font = ExtResource("1_gbdfo")
-text = "Level 3"
-
-[node name="Level 4" type="Button" parent="Level Buttons"]
-offset_left = -448.0
-offset_top = -64.0
-offset_right = -320.0
-theme_override_fonts/font = ExtResource("1_gbdfo")
-text = "Level 1"
-
-[node name="Level 5" type="Button" parent="Level Buttons"]
-offset_left = -192.0
-offset_top = -64.0
-offset_right = -64.0
-theme_override_fonts/font = ExtResource("1_gbdfo")
-text = "Level 1"
-
-[node name="Level 6" type="Button" parent="Level Buttons"]
-offset_left = 64.0
-offset_top = -64.0
-offset_right = 192.0
-theme_override_fonts/font = ExtResource("1_gbdfo")
-text = "Level 1"
-
-[node name="Level 7" type="Button" parent="Level Buttons"]
-offset_left = 320.0
-offset_top = -64.0
-offset_right = 448.0
-theme_override_fonts/font = ExtResource("1_gbdfo")
-text = "Level 1"
-
-[node name="Level 8" type="Button" parent="Level Buttons"]
-offset_left = -448.0
-offset_top = 64.0
-offset_right = -320.0
-offset_bottom = 128.0
-theme_override_fonts/font = ExtResource("1_gbdfo")
-text = "Level 1"
-
-[node name="Level 9" type="Button" parent="Level Buttons"]
-offset_left = -192.0
-offset_top = 64.0
-offset_right = -64.0
-offset_bottom = 128.0
-theme_override_fonts/font = ExtResource("1_gbdfo")
-text = "Level 1"
-
-[node name="Level 10" type="Button" parent="Level Buttons"]
-offset_left = 64.0
-offset_top = 64.0
-offset_right = 192.0
-offset_bottom = 128.0
-theme_override_fonts/font = ExtResource("1_gbdfo")
-text = "Level 1"
-
-[node name="Level 11" type="Button" parent="Level Buttons"]
-offset_left = 320.0
-offset_top = 64.0
-offset_right = 448.0
-offset_bottom = 128.0
-theme_override_fonts/font = ExtResource("1_gbdfo")
-text = "Level 1"
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Level Buttons/Demo Level" to="." method="_on_demo_level_pressed"]

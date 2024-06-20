@@ -1,0 +1,81 @@
+[gd_scene load_steps=4 format=3 uid="uid://bju3scse1nrsb"]
+
+[ext_resource type="Script" path="res://scripts/bg.gd" id="1_cqv4w"]
+[ext_resource type="Texture2D" uid="uid://cd5sfd7melsw8" path="res://assets/background.png" id="1_vuhml"]
+[ext_resource type="Texture2D" uid="uid://ckiodwjt0djny" path="res://assets/middle.png" id="2_0dovu"]
+
+[node name="Paralax BG" type="ParallaxBackground"]
+script = ExtResource("1_cqv4w")
+
+[node name="Sky back" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.5, 0)
+motion_mirroring = Vector2(320, 0)
+
+[node name="Background" type="Sprite2D" parent="Sky back"]
+scale = Vector2(0.833333, 0.833333)
+texture = ExtResource("1_vuhml")
+centered = false
+
+[node name="woods mid" type="ParallaxLayer" parent="."]
+position = Vector2(0, -112)
+motion_mirroring = Vector2(320, 0)
+
+[node name="Middle" type="Sprite2D" parent="woods mid"]
+position = Vector2(0, 72)
+scale = Vector2(0.363636, 0.347826)
+texture = ExtResource("2_0dovu")
+centered = false
+
+[node name="Middle2" type="Sprite2D" parent="woods mid"]
+position = Vector2(64, 72)
+scale = Vector2(0.363636, 0.347826)
+texture = ExtResource("2_0dovu")
+centered = false
+
+[node name="Middle3" type="Sprite2D" parent="woods mid"]
+position = Vector2(128, 72)
+scale = Vector2(0.363636, 0.347826)
+texture = ExtResource("2_0dovu")
+centered = false
+
+[node name="Middle4" type="Sprite2D" parent="woods mid"]
+position = Vector2(192, 72)
+scale = Vector2(0.363636, 0.347826)
+texture = ExtResource("2_0dovu")
+centered = false
+
+[node name="Middle5" type="Sprite2D" parent="woods mid"]
+position = Vector2(256, 72)
+scale = Vector2(0.363636, 0.347826)
+texture = ExtResource("2_0dovu")
+centered = false
+
+[node name="Middle6" type="Sprite2D" parent="woods mid"]
+position = Vector2(0, 112)
+scale = Vector2(0.363636, 0.347826)
+texture = ExtResource("2_0dovu")
+centered = false
+
+[node name="Middle7" type="Sprite2D" parent="woods mid"]
+position = Vector2(64, 112)
+scale = Vector2(0.363636, 0.347826)
+texture = ExtResource("2_0dovu")
+centered = false
+
+[node name="Middle8" type="Sprite2D" parent="woods mid"]
+position = Vector2(128, 112)
+scale = Vector2(0.363636, 0.347826)
+texture = ExtResource("2_0dovu")
+centered = false
+
+[node name="Middle9" type="Sprite2D" parent="woods mid"]
+position = Vector2(192, 112)
+scale = Vector2(0.363636, 0.347826)
+texture = ExtResource("2_0dovu")
+centered = false
+
+[node name="Middle10" type="Sprite2D" parent="woods mid"]
+position = Vector2(256, 112)
+scale = Vector2(0.363636, 0.347826)
+texture = ExtResource("2_0dovu")
+centered = false

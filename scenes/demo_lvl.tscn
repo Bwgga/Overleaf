@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://dgadb3slcv0m0"]
+[gd_scene load_steps=15 format=3 uid="uid://dgadb3slcv0m0"]
 
 [ext_resource type="PackedScene" uid="uid://bi0b8kon5i34h" path="res://scenes/game.tscn" id="1_uc1ry"]
 [ext_resource type="PackedScene" uid="uid://da32pk1hqejhn" path="res://scenes/player.tscn" id="2_t1e6b"]
 [ext_resource type="PackedScene" uid="uid://b2jlt4fjomusb" path="res://scenes/grass_platfrom.tscn" id="3_2jai2"]
 [ext_resource type="PackedScene" uid="uid://d0ii1kyw08agv" path="res://scenes/coin.tscn" id="4_vhtng"]
+[ext_resource type="PackedScene" uid="uid://bju3scse1nrsb" path="res://scenes/bg.tscn" id="5_wh4w7"]
 
 [sub_resource type="Animation" id="Animation_cwe7q"]
 length = 0.001
@@ -128,8 +129,7 @@ layer_0/tile_data = PackedInt32Array(65535, 0, 0, 0, 0, 0, 1, 0, 0, -196604, 0, 
 position = Vector2(0, -16)
 
 [node name="Camera2D" type="Camera2D" parent="Player" index="2"]
-position = Vector2(0, 16)
-zoom = Vector2(4, 4)
+position = Vector2(0, -8)
 limit_bottom = 120
 position_smoothing_enabled = true
 
@@ -205,3 +205,5 @@ position = Vector2(-272, 104)
 
 [node name="Coin14" parent="Coins" index="13" instance=ExtResource("4_vhtng")]
 position = Vector2(-424, -40)
+
+[node name="Paralax BG" parent="." index="5" instance=ExtResource("5_wh4w7")]
