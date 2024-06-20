@@ -260,3 +260,7 @@ shape = SubResource("RectangleShape2D_tks66")
 [node name="DeathWater2" type="CollisionShape2D" parent="Killzone" index="3"]
 position = Vector2(424, 41)
 shape = SubResource("RectangleShape2D_tks66")
+
+[node name="Stats" parent="UI" index="0"]
+text = "
+Coins: 0"

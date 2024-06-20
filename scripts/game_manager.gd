@@ -6,4 +6,4 @@ var coins = 0
 
 func add_coin():
 	coins += 1
-	stats.text = "Coins: " + str(coins) + "\n"
+	stats.text = " \nCoins: " + str(coins) + "\n"
