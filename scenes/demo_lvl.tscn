@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://dgadb3slcv0m0"]
+[gd_scene load_steps=17 format=3 uid="uid://dgadb3slcv0m0"]
 
 [ext_resource type="PackedScene" uid="uid://bi0b8kon5i34h" path="res://scenes/game.tscn" id="1_uc1ry"]
 [ext_resource type="PackedScene" uid="uid://da32pk1hqejhn" path="res://scenes/player.tscn" id="2_t1e6b"]
 [ext_resource type="PackedScene" uid="uid://b2jlt4fjomusb" path="res://scenes/grass_platfrom.tscn" id="3_2jai2"]
 [ext_resource type="PackedScene" uid="uid://d0ii1kyw08agv" path="res://scenes/coin.tscn" id="4_vhtng"]
 [ext_resource type="PackedScene" uid="uid://bju3scse1nrsb" path="res://scenes/bg.tscn" id="5_wh4w7"]
+[ext_resource type="FontFile" uid="uid://dkcdht4s7cl25" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="6_p1hrw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tks66"]
 size = Vector2(144, 20)
@@ -220,3 +221,42 @@ position = Vector2(-272, 104)
 position = Vector2(-424, -40)
 
 [node name="Paralax BG" parent="." index="5" instance=ExtResource("5_wh4w7")]
+
+[node name="Labels" type="Node2D" parent="." index="6"]
+
+[node name="Label" type="Label" parent="Labels" index="0"]
+offset_left = -24.0
+offset_top = -64.0
+offset_right = 24.0
+offset_bottom = -40.0
+theme_override_colors/font_color = Color(0.12185, 0.226634, 0.257714, 1)
+theme_override_fonts/font = ExtResource("6_p1hrw")
+theme_override_font_sizes/font_size = 8
+text = "Space to jump"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="Labels" index="1"]
+offset_left = 104.0
+offset_top = -128.0
+offset_right = 152.0
+offset_bottom = -98.0
+theme_override_colors/font_color = Color(0.12185, 0.226634, 0.257714, 1)
+theme_override_fonts/font = ExtResource("6_p1hrw")
+theme_override_font_sizes/font_size = 8
+text = "Get all the coins!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="Labels" index="2"]
+offset_left = 328.0
+offset_top = -72.0
+offset_right = 408.0
+offset_bottom = -42.0
+theme_override_colors/font_color = Color(0.12185, 0.226634, 0.257714, 1)
+theme_override_fonts/font = ExtResource("6_p1hrw")
+theme_override_font_sizes/font_size = 8
+text = "Careful! The water is dangerous.
+"
+horizontal_alignment = 1
+autowrap_mode = 2
