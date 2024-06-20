@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bi0b8kon5i34h"]
+[gd_scene load_steps=6 format=3 uid="uid://bi0b8kon5i34h"]
 
 [ext_resource type="Texture2D" uid="uid://c13vfyna2c56e" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_kdfst"]
+[ext_resource type="PackedScene" uid="uid://dbuaq7wiywak2" path="res://scenes/killzone.tscn" id="2_q3n0e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3uco4"]
 texture = ExtResource("1_kdfst")
@@ -421,9 +422,12 @@ sources/0 = SubResource("TileSetAtlasSource_3uco4")
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_x3iia")
 format = 2
+layer_1/name = "Foreground"
+layer_1/z_index = 6
+layer_1/tile_data = PackedInt32Array()
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Killzone" parent="." instance=ExtResource("2_q3n0e")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 position = Vector2(0, 150)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("WorldBoundaryShape2D_yw6e3")
