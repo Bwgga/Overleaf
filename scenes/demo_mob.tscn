@@ -1,7 +1,7 @@
 <<<<<<< HEAD
 [gd_scene load_steps=8 format=3 uid="uid://bt8iuyhkwctnh"]
 =======
-[gd_scene load_steps=9 format=3 uid="uid://cevn30gv6wun1"]
+[gd_scene load_steps=9 format=3 uid="uid://bt8iuyhkwctnh"]
 >>>>>>> 8ca6e8fab4cefc309f1adeeb5cb3df18da01a917
 
 [ext_resource type="Texture2D" uid="uid://barn223rumc62" path="res://assets/mob_idle.png" id="1_1xcr3"]
