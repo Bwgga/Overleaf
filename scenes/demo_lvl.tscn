@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dgadb3slcv0m0"]
+[gd_scene load_steps=26 format=3 uid="uid://dgadb3slcv0m0"]
 
 [ext_resource type="PackedScene" uid="uid://bi0b8kon5i34h" path="res://scenes/game.tscn" id="1_uc1ry"]
 [ext_resource type="PackedScene" uid="uid://da32pk1hqejhn" path="res://scenes/player.tscn" id="2_t1e6b"]
@@ -6,7 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://d0ii1kyw08agv" path="res://scenes/coin.tscn" id="4_vhtng"]
 [ext_resource type="PackedScene" uid="uid://bju3scse1nrsb" path="res://scenes/bg.tscn" id="5_wh4w7"]
 [ext_resource type="FontFile" uid="uid://dkcdht4s7cl25" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="6_p1hrw"]
-[ext_resource type="PackedScene" uid="uid://cevn30gv6wun1" path="res://scenes/demo_mob.tscn" id="7_7xt7m"]
+[ext_resource type="PackedScene" uid="uid://bt8iuyhkwctnh" path="res://scenes/demo_mob.tscn" id="7_7xt7m"]
+[ext_resource type="PackedScene" uid="uid://bqvvhsaxhib8l" path="res://scenes/health_coin.tscn" id="8_414jg"]
+[ext_resource type="PackedScene" uid="uid://b5j8wvpjfpcc3" path="res://scenes/progress_bar.tscn" id="8_ew5ey"]
+[ext_resource type="Script" path="res://scenes/progress_bar.gd" id="9_d3ale"]
+[ext_resource type="Script" path="res://scenes/health_coin.gd" id="11_sk0ld"]
 
 [sub_resource type="Animation" id="Animation_cwe7q"]
 length = 0.001
@@ -125,6 +129,23 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tks66"]
 size = Vector2(144, 20)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w7ht0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5tm8m"]
+bg_color = Color(0.308796, 0.682216, 0.539548, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_luviv"]
+bg_color = Color(0.0962047, 0.0962048, 0.0962047, 1)
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+shadow_color = Color(0, 0, 0, 0.27451)
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sybil"]
+bg_color = Color(1, 1, 1, 1)
+
 [node name="Demo lvl" instance=ExtResource("1_uc1ry")]
 
 [node name="TileMap" parent="." index="1"]
@@ -181,7 +202,7 @@ position = Vector2(104, -72)
 position = Vector2(232, -40)
 
 [node name="Coin4" parent="Coins" index="3" instance=ExtResource("4_vhtng")]
-position = Vector2(72, 24)
+position = Vector2(73, 24)
 
 [node name="Coin5" parent="Coins" index="4" instance=ExtResource("4_vhtng")]
 position = Vector2(176, 24)
@@ -262,11 +283,53 @@ shape = SubResource("RectangleShape2D_tks66")
 position = Vector2(424, 41)
 shape = SubResource("RectangleShape2D_tks66")
 
+[node name="DemoMob" parent="." index="8" instance=ExtResource("7_7xt7m")]
+position = Vector2(-273, -41)
+
 [node name="Stats" parent="UI" index="0"]
 text = "
 Coins: 0"
 
-[node name="Node2D" parent="." index="9" instance=ExtResource("7_7xt7m")]
-position = Vector2(-273, -41)
+[node name="HealthBar" parent="UI" index="1" instance=ExtResource("8_ew5ey")]
+unique_name_in_owner = true
+z_index = 1
+offset_top = 0.0
+offset_right = 240.0
+offset_bottom = 4.0
+theme_override_styles/background = SubResource("StyleBoxEmpty_w7ht0")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5tm8m")
+max_value = 100.0
+step = 10.0
+value = 50.0
+rounded = false
+fill_mode = 0
+script = ExtResource("9_d3ale")
+
+[node name="DamageBar" type="ProgressBar" parent="UI/HealthBar" index="0"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_luviv")
+theme_override_styles/fill = SubResource("StyleBoxFlat_sybil")
+step = 1.0
+value = 80.0
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="UI/HealthBar" index="1"]
+wait_time = 0.4
+one_shot = true
+
+[node name="HeathCoin" type="Node2D" parent="." index="10"]
+
+[node name="Health Coin" parent="HeathCoin" index="0" instance=ExtResource("8_414jg")]
+position = Vector2(79, 33)
+collision_mask = 2
+script = ExtResource("11_sk0ld")
 
 [connection signal="body_entered" from="Killzone" to="Player" method="_on_killzone_body_entered"]
+[connection signal="timeout" from="UI/HealthBar/Timer" to="UI/HealthBar" method="_on_timer_timeout"]
+[connection signal="body_entered" from="HeathCoin/Health Coin" to="Game_Manager" method="_add_health_coin"]
