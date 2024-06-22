@@ -60,5 +60,6 @@ func _physics_process(delta):
 
 func _on_killzone_body_entered(body):
 	has_died = true
+	print("You died!")
 	# animated_sprite.stop()
 	# animated_sprite.play("death")

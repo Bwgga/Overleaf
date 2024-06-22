@@ -267,6 +267,6 @@ text = "
 Coins: 0"
 
 [node name="Node2D" parent="." index="9" instance=ExtResource("7_7xt7m")]
-position = Vector2(-284, 104)
+position = Vector2(-276, 103)
 
 [connection signal="body_entered" from="Killzone" to="Player" method="_on_killzone_body_entered"]
