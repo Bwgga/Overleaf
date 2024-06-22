@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://da32pk1hqejhn"]
+[gd_scene load_steps=30 format=3 uid="uid://da32pk1hqejhn"]
 
 [ext_resource type="Texture2D" uid="uid://dbue2k0rvfhfl" path="res://assets/brackeys_platformer_assets/sprites/knight.png" id="1_e05i8"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_k07dn"]
@@ -6,6 +6,22 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t3fwg"]
 radius = 5.0
 height = 16.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wb2g"]
+atlas = ExtResource("1_e05i8")
+region = Rect2(0, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5bom"]
+atlas = ExtResource("1_e05i8")
+region = Rect2(32, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tcgs0"]
+atlas = ExtResource("1_e05i8")
+region = Rect2(64, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_et4rl"]
+atlas = ExtResource("1_e05i8")
+region = Rect2(96, 224, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_knou4"]
 atlas = ExtResource("1_e05i8")
@@ -93,6 +109,23 @@ region = Rect2(224, 96, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_st1fp"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4wb2g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5bom")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tcgs0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_et4rl")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_knou4")
@@ -184,7 +217,4 @@ shape = SubResource("CapsuleShape2D_t3fwg")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_st1fp")
-animation = &"idle"
-autoplay = "idle"
-frame = 1
-frame_progress = 0.884925
+animation = &"death"

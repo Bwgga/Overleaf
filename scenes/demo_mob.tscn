@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://cevn30gv6wun1"]
+
+[ext_resource type="Texture2D" uid="uid://barn223rumc62" path="res://assets/mob_idle.png" id="1_1xcr3"]
+[ext_resource type="Script" path="res://scenes/demo_mob.gd" id="2_kj33c"]
+[ext_resource type="PackedScene" uid="uid://dbuaq7wiywak2" path="res://scenes/killzone.tscn" id="3_vao8y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tou1r"]
+atlas = ExtResource("1_1xcr3")
+region = Rect2(0, 0, 30, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mp3of"]
+atlas = ExtResource("1_1xcr3")
+region = Rect2(30, 0, 30, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bwqam"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tou1r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mp3of")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vy8vh"]
+size = Vector2(12, 10)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Demo mob" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bwqam")
+autoplay = "default"
+frame = 1
+frame_progress = 0.591162
+script = ExtResource("2_kj33c")
+
+[node name="Killzone" parent="Demo mob" instance=ExtResource("3_vao8y")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Demo mob/Killzone"]
+position = Vector2(8, 0)
+shape = SubResource("RectangleShape2D_vy8vh")

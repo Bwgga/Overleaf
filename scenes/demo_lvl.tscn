@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dgadb3slcv0m0"]
+[gd_scene load_steps=18 format=3 uid="uid://dgadb3slcv0m0"]
 
 [ext_resource type="PackedScene" uid="uid://bi0b8kon5i34h" path="res://scenes/game.tscn" id="1_uc1ry"]
 [ext_resource type="PackedScene" uid="uid://da32pk1hqejhn" path="res://scenes/player.tscn" id="2_t1e6b"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d0ii1kyw08agv" path="res://scenes/coin.tscn" id="4_vhtng"]
 [ext_resource type="PackedScene" uid="uid://bju3scse1nrsb" path="res://scenes/bg.tscn" id="5_wh4w7"]
 [ext_resource type="FontFile" uid="uid://dkcdht4s7cl25" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="6_p1hrw"]
+[ext_resource type="PackedScene" uid="uid://cevn30gv6wun1" path="res://scenes/demo_mob.tscn" id="7_7xt7m"]
 
 [sub_resource type="Animation" id="Animation_cwe7q"]
 length = 0.001
@@ -264,5 +265,8 @@ shape = SubResource("RectangleShape2D_tks66")
 [node name="Stats" parent="UI" index="0"]
 text = "
 Coins: 0"
+
+[node name="Node2D" parent="." index="9" instance=ExtResource("7_7xt7m")]
+position = Vector2(-273, -41)
 
 [connection signal="body_entered" from="Killzone" to="Player" method="_on_killzone_body_entered"]
