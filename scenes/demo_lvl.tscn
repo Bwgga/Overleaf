@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d0ii1kyw08agv" path="res://scenes/coin.tscn" id="4_vhtng"]
 [ext_resource type="PackedScene" uid="uid://bju3scse1nrsb" path="res://scenes/bg.tscn" id="5_wh4w7"]
 [ext_resource type="FontFile" uid="uid://dkcdht4s7cl25" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="6_p1hrw"]
-[ext_resource type="PackedScene" uid="uid://bt8iuyhkwctnh" path="res://scenes/demo_mob.tscn" id="7_7xt7m"]
+[ext_resource type="PackedScene" uid="uid://da32pk1hqejhn" path="res://scenes/player.tscn" id="7_7xt7m"]
 [ext_resource type="PackedScene" uid="uid://bqvvhsaxhib8l" path="res://scenes/health_coin.tscn" id="8_414jg"]
 [ext_resource type="PackedScene" uid="uid://b5j8wvpjfpcc3" path="res://scenes/progress_bar.tscn" id="8_ew5ey"]
 [ext_resource type="Script" path="res://scenes/progress_bar.gd" id="9_d3ale"]
