@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://bqvvhsaxhib8l"]
+
+[ext_resource type="Texture2D" uid="uid://vagdhw0cd4n7" path="res://assets/brackeys_platformer_assets/sprites/fruit.png" id="1_bv4rd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmmeu"]
+atlas = ExtResource("1_bv4rd")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8u05"]
+atlas = ExtResource("1_bv4rd")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ahy45"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmmeu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8u05")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q33w3"]
+radius = 5.09902
+
+[node name="Health Coin" type="Area2D"]
+
+[node name="HealthCoin" type="AnimatedSprite2D" parent="."]
+position = Vector2(24, -11)
+sprite_frames = SubResource("SpriteFrames_ahy45")
+autoplay = "default"
+frame_progress = 0.00275609
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(24, -10)
+shape = SubResource("CircleShape2D_q33w3")
