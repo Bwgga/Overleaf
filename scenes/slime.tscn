@@ -1,0 +1,159 @@
+[gd_scene load_steps=20 format=3 uid="uid://2llqe8x3h76w"]
+
+[ext_resource type="Script" path="res://scripts/slime.gd" id="1_8iqmp"]
+[ext_resource type="Texture2D" uid="uid://cmltdmqueofsj" path="res://assets/brackeys_platformer_assets/sprites/slime_purple.png" id="1_mpw8x"]
+[ext_resource type="Script" path="res://scenes/damage_zone.gd" id="3_pdf2m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ck0f"]
+atlas = ExtResource("1_mpw8x")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yedk3"]
+atlas = ExtResource("1_mpw8x")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q2px1"]
+atlas = ExtResource("1_mpw8x")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ieem"]
+atlas = ExtResource("1_mpw8x")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_juy7g"]
+atlas = ExtResource("1_mpw8x")
+region = Rect2(0, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqihm"]
+atlas = ExtResource("1_mpw8x")
+region = Rect2(24, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8nwj5"]
+atlas = ExtResource("1_mpw8x")
+region = Rect2(48, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3iqe"]
+atlas = ExtResource("1_mpw8x")
+region = Rect2(72, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nj6v1"]
+atlas = ExtResource("1_mpw8x")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wkdb"]
+atlas = ExtResource("1_mpw8x")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_25qoh"]
+atlas = ExtResource("1_mpw8x")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_da6e6"]
+atlas = ExtResource("1_mpw8x")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yq315"]
+atlas = ExtResource("1_mpw8x")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j0bh8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ck0f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yedk3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q2px1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ieem")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_juy7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqihm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8nwj5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q3iqe")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nj6v1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6wkdb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_25qoh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_da6e6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yq315")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tpg1e"]
+size = Vector2(13, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j72ux"]
+size = Vector2(8, 14)
+
+[node name="Slime" type="CharacterBody2D"]
+script = ExtResource("1_8iqmp")
+
+[node name="Slime" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -12)
+sprite_frames = SubResource("SpriteFrames_j0bh8")
+animation = &"death"
+autoplay = "idle"
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(0, -6)
+target_position = Vector2(9, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(0, -6)
+target_position = Vector2(-9, 0)
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -7)
+shape = SubResource("RectangleShape2D_tpg1e")
+
+[node name="Damagezone" type="Area2D" parent="."]
+position = Vector2(4, 0)
+collision_mask = 2
+script = ExtResource("3_pdf2m")
+
+[node name="Damagezone" type="CollisionShape2D" parent="Damagezone"]
+position = Vector2(-1, -7)
+shape = SubResource("RectangleShape2D_j72ux")
+
+[node name="Timer" type="Timer" parent="Damagezone"]
+
+[connection signal="body_entered" from="Damagezone" to="." method="_on_damagezone_body_entered"]

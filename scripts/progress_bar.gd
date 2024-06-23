@@ -1,11 +1,11 @@
 extends ProgressBar
 
 @onready var health_bar = %HealthBar
-@onready var timer = $Timer
+@onready var timer = $TimerHealthBar
 @onready var damage_bar = $DamageBar
 
 const MAX_HEALTH = 100
-var health = MAX_HEALTH
+var health = 100
 
 func _ready():
 	set_health_bar()
@@ -19,13 +19,21 @@ func set_health_bar():
 	value = health
 	
 func add_healthcoin():
-	health -= 10
+	if health < MAX_HEALTH:
+		if (MAX_HEALTH - health) < 10:
+			health += MAX_HEALTH - health
+		else:
+			health += 10
 	set_health_bar()
 
 func _on_timer_timeout():
 	# damage_bar.value = health 
 	var tween = create_tween()
 	tween.tween_property(damage_bar,"value", health, 0.1)
+
+func get_hurt():
+	health -= 10
+	set_health_bar()
 
 
 '''
