@@ -1,7 +1,7 @@
 [gd_scene load_steps=26 format=3 uid="uid://da32pk1hqejhn"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_k07dn"]
-[ext_resource type="Texture2D" uid="uid://3xpuxfc4jam6" path="res://drawings/Overleaf-MC-sprite-sheet.png" id="2_3mt7y"]
+[ext_resource type="Texture2D" uid="uid://cxniiul2d7sfd" path="res://assets/drawings/Overleaf-MC-sprite-sheet.png" id="2_3mt7y"]
 [ext_resource type="Texture2D" uid="uid://2phkto1yruus" path="res://assets/brackeys_platformer_assets/sprites/slime_green.png" id="3_ibrfk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t3fwg"]
@@ -194,4 +194,4 @@ shape = SubResource("CapsuleShape2D_t3fwg")
 position = Vector2(1, -4)
 scale = Vector2(0.0651923, 0.0647234)
 sprite_frames = SubResource("SpriteFrames_st1fp")
-animation = &"hurt"
+animation = &"death"

@@ -1,9 +1,13 @@
 [gd_scene format=3 uid="uid://b5j8wvpjfpcc3"]
 
 [node name="ProgressBar" type="ProgressBar"]
-offset_top = 21.0
-offset_right = 4.0
-offset_bottom = 48.0
+anchors_preset = -1
+anchor_top = 0.018
+anchor_bottom = 0.018
+offset_left = 2.0
+offset_top = 27.0
+offset_right = 6.0
+offset_bottom = 54.0
 max_value = 10.0
 step = 1.0
 rounded = true
