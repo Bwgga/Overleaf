@@ -30,11 +30,10 @@ radius = 5.09902
 [node name="Health Coin" type="Area2D"]
 
 [node name="HealthCoin" type="AnimatedSprite2D" parent="."]
-position = Vector2(24, -11)
+position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_ahy45")
 autoplay = "default"
 frame_progress = 0.00275609
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(24, -10)
 shape = SubResource("CircleShape2D_q33w3")
