@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqjdgchpb8js3"
-path="res://.godot/imported/straw-house.png-05e72239d165d8af40cefe2fe46642c1.ctex"
+uid="uid://b380ilj512l5f"
+path="res://.godot/imported/house.png-983fc296071adc9158c036317cf0da93.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/straw-house.png"
-dest_files=["res://.godot/imported/straw-house.png-05e72239d165d8af40cefe2fe46642c1.ctex"]
+source_file="res://assets/extra internet assets/house.png"
+dest_files=["res://.godot/imported/house.png-983fc296071adc9158c036317cf0da93.ctex"]
 
 [params]
 

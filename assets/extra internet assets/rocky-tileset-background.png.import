@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8rpg5325du52"
-path="res://.godot/imported/wooden-house.png-f76054ab97bae3df9dfccf403441492b.ctex"
+uid="uid://ii4om62kbgbl"
+path="res://.godot/imported/rocky-tileset-background.png-444385bae27a7a9111b74d6d9826ee34.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/wooden-house.png"
-dest_files=["res://.godot/imported/wooden-house.png-f76054ab97bae3df9dfccf403441492b.ctex"]
+source_file="res://assets/extra internet assets/rocky-tileset-background.png"
+dest_files=["res://.godot/imported/rocky-tileset-background.png-444385bae27a7a9111b74d6d9826ee34.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://barn223rumc62"
-path="res://.godot/imported/mob_idle.png-8a9fa759c9a10733d52ea7aa8735b01b.ctex"
+uid="uid://bsoufq6r3n4ho"
+path="res://.godot/imported/plant-house.png-44d18baefcc31cd5f59b6051cebc3f9e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/mob_idle.png"
-dest_files=["res://.godot/imported/mob_idle.png-8a9fa759c9a10733d52ea7aa8735b01b.ctex"]
+source_file="res://assets/extra internet assets/plant-house.png"
+dest_files=["res://.godot/imported/plant-house.png-44d18baefcc31cd5f59b6051cebc3f9e.ctex"]
 
 [params]
 

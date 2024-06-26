@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ii4om62kbgbl"
-path="res://.godot/imported/rocky-tileset-background.png-7f4eff6587fd06683c4e93e49441255f.ctex"
+uid="uid://1as85nlp08x0"
+path="res://.godot/imported/tree.png-c0690079589196d2d653a9be4f04b856.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/rocky-tileset-background.png"
-dest_files=["res://.godot/imported/rocky-tileset-background.png-7f4eff6587fd06683c4e93e49441255f.ctex"]
+source_file="res://assets/extra internet assets/tree.png"
+dest_files=["res://.godot/imported/tree.png-c0690079589196d2d653a9be4f04b856.ctex"]
 
 [params]
 

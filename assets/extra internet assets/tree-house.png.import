@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b8kp4jts1e61p"
-path="res://.godot/imported/tree-house.png-09517c653cf37cf7341fdb8b4d2c4172.ctex"
+path="res://.godot/imported/tree-house.png-cb5bbd8a0213a39d1e17e8f2db89c2a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tree-house.png"
-dest_files=["res://.godot/imported/tree-house.png-09517c653cf37cf7341fdb8b4d2c4172.ctex"]
+source_file="res://assets/extra internet assets/tree-house.png"
+dest_files=["res://.godot/imported/tree-house.png-cb5bbd8a0213a39d1e17e8f2db89c2a9.ctex"]
 
 [params]
 

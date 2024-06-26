@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsoufq6r3n4ho"
-path="res://.godot/imported/plant-house.png-cc59434ba369253915dddc702198d9c3.ctex"
+uid="uid://ckiodwjt0djny"
+path="res://.godot/imported/middle.png-eca3df6c1d250586a18234af7fda9145.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/plant-house.png"
-dest_files=["res://.godot/imported/plant-house.png-cc59434ba369253915dddc702198d9c3.ctex"]
+source_file="res://assets/extra internet assets/middle.png"
+dest_files=["res://.godot/imported/middle.png-eca3df6c1d250586a18234af7fda9145.ctex"]
 
 [params]
 

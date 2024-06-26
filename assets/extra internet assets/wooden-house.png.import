@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckiodwjt0djny"
-path="res://.godot/imported/middle.png-0f784a6fcaea6e1a127677138c23c118.ctex"
+uid="uid://b8rpg5325du52"
+path="res://.godot/imported/wooden-house.png-58d73136ac32526ec89e72ae4d6c9807.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/middle.png"
-dest_files=["res://.godot/imported/middle.png-0f784a6fcaea6e1a127677138c23c118.ctex"]
+source_file="res://assets/extra internet assets/wooden-house.png"
+dest_files=["res://.godot/imported/wooden-house.png-58d73136ac32526ec89e72ae4d6c9807.ctex"]
 
 [params]
 
