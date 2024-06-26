@@ -64,6 +64,6 @@ func flip(state):
 		damagezone.position.x = -4
 
 func _on_damagezone_body_entered(body):
-	health_bar.get_hurt()
+	health_bar.get_hurt(10)
 	
 	

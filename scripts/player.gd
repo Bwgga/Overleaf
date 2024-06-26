@@ -7,10 +7,9 @@ const JUMP_VELOCITY = -300.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var health_bar = %HealthBar
 
 var last_dir : int
-
-var has_died : bool = false
 
 func _physics_process(delta):
 	# Add the gravity
@@ -18,7 +17,7 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 
 	# Handle jump.
-	if not has_died:
+	if not health_bar.value == 0:
 		if Input.is_action_just_pressed("jump") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
 
@@ -56,7 +55,3 @@ func _physics_process(delta):
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 
 		move_and_slide()
-
-
-func _on_killzone_body_entered(body):
-	has_died = true

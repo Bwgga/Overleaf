@@ -3,6 +3,8 @@ extends ProgressBar
 @onready var health_bar = %HealthBar
 @onready var timer = $TimerHealthBar
 @onready var damage_bar = $DamageBar
+@onready var death_timer = $DeathTimer
+@onready var player = $"../../Player"
 
 const MAX_HEALTH = 100
 var health = 100
@@ -31,10 +33,13 @@ func _on_timer_timeout():
 	var tween = create_tween()
 	tween.tween_property(damage_bar,"value", health, 0.1)
 
-func get_hurt():
-	health -= 10
+func get_hurt(damageAmount: int = 10):
+	health -= damageAmount
 	set_health_bar()
-
+	
+	if health == 0:
+		death_timer.start()
+		player.get_node("AnimatedSprite2D").play("death")
 
 '''
 func _imput(event: InputEvent):
@@ -47,3 +52,7 @@ func damage():
 		health = MAX_HEALTH
 	set_health_bar()
 '''
+
+
+func _on_death_timer_timeout():
+	get_tree().reload_current_scene()
