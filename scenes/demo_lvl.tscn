@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dgadb3slcv0m0"]
+[gd_scene load_steps=27 format=3 uid="uid://dgadb3slcv0m0"]
 
 [ext_resource type="PackedScene" uid="uid://bi0b8kon5i34h" path="res://scenes/game.tscn" id="1_uc1ry"]
 [ext_resource type="PackedScene" uid="uid://b2jlt4fjomusb" path="res://scenes/grass_platfrom.tscn" id="3_2jai2"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://da32pk1hqejhn" path="res://scenes/player.tscn" id="7_7xt7m"]
 [ext_resource type="PackedScene" uid="uid://bqvvhsaxhib8l" path="res://scenes/health_coin.tscn" id="8_414jg"]
 [ext_resource type="PackedScene" uid="uid://b5j8wvpjfpcc3" path="res://scenes/progress_bar.tscn" id="8_ew5ey"]
-[ext_resource type="Script" path="res://scripts/progress_bar.gd" id="9_d3ale"]
 [ext_resource type="Script" path="res://scripts/health_coin.gd" id="11_sk0ld"]
 [ext_resource type="PackedScene" uid="uid://2llqe8x3h76w" path="res://scenes/slime.tscn" id="11_urmd2"]
 
@@ -370,7 +369,6 @@ step = 10.0
 value = 50.0
 rounded = false
 fill_mode = 0
-script = ExtResource("9_d3ale")
 
 [node name="DamageBar" type="ProgressBar" parent="UI/HealthBar" index="0"]
 z_index = -1
