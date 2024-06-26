@@ -49,6 +49,7 @@ func _physics_process(delta):
 			else:
 				animated_sprite.flip_h = false
 		
+		# move and slow down when not moving
 		if direction:
 			velocity.x = direction * SPEED
 		else:
