@@ -31,8 +31,8 @@ func _on_timer_timeout():
 	var tween = create_tween()
 	tween.tween_property(damage_bar,"value", health, 0.1)
 
-func get_hurt():
-	health -= 10
+func get_hurt(damageAmount: int = 10):
+	health -= damageAmount
 	set_health_bar()
 
 
