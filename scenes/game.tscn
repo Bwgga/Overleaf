@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://bi0b8kon5i34h"]
+[gd_scene load_steps=16 format=3 uid="uid://bi0b8kon5i34h"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_emxst"]
 [ext_resource type="Texture2D" uid="uid://c13vfyna2c56e" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_kdfst"]
 [ext_resource type="PackedScene" uid="uid://dbuaq7wiywak2" path="res://scenes/killzone.tscn" id="2_q3n0e"]
 [ext_resource type="FontFile" uid="uid://dkcdht4s7cl25" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="4_xn5fq"]
 [ext_resource type="PackedScene" uid="uid://dh8cdjm0f6vb3" path="res://scenes/secret_area.tscn" id="5_h1h1i"]
+[ext_resource type="PackedScene" uid="uid://b5j8wvpjfpcc3" path="res://scenes/progress_bar.tscn" id="5_tnc25"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3uco4"]
 texture = ExtResource("1_kdfst")
@@ -785,6 +786,23 @@ sources/1 = SubResource("TileSetAtlasSource_g2vrs")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yw6e3"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yp2al"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r150x"]
+bg_color = Color(0.308796, 0.682216, 0.539548, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hq1w8"]
+bg_color = Color(0.0962047, 0.0962048, 0.0962047, 1)
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+shadow_color = Color(0, 0, 0, 0.27451)
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mro45"]
+bg_color = Color(1, 1, 1, 1)
+
 [node name="Game" type="Node2D"]
 
 [node name="Game_Manager" type="Node" parent="."]
@@ -823,4 +841,38 @@ text = "Coins: 0"
 autowrap_mode = 2
 text_overrun_behavior = 3
 
+[node name="HealthBar" parent="UI" instance=ExtResource("5_tnc25")]
+unique_name_in_owner = true
+z_index = 1
+offset_top = 0.0
+offset_right = 240.0
+offset_bottom = 4.0
+theme_override_styles/background = SubResource("StyleBoxEmpty_yp2al")
+theme_override_styles/fill = SubResource("StyleBoxFlat_r150x")
+max_value = 100.0
+step = 10.0
+value = 50.0
+rounded = false
+fill_mode = 0
+
+[node name="DamageBar" type="ProgressBar" parent="UI/HealthBar"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_hq1w8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_mro45")
+step = 1.0
+value = 80.0
+show_percentage = false
+
+[node name="TimerHealthBar" type="Timer" parent="UI/HealthBar"]
+wait_time = 0.3
+one_shot = true
+
 [node name="SecretArea" parent="." instance=ExtResource("5_h1h1i")]
+
+[connection signal="timeout" from="UI/HealthBar/TimerHealthBar" to="UI/HealthBar" method="_on_timer_timeout"]

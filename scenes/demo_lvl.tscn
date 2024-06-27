@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dgadb3slcv0m0"]
+[gd_scene load_steps=22 format=3 uid="uid://dgadb3slcv0m0"]
 
 [ext_resource type="PackedScene" uid="uid://bi0b8kon5i34h" path="res://scenes/game.tscn" id="1_uc1ry"]
 [ext_resource type="PackedScene" uid="uid://b2jlt4fjomusb" path="res://scenes/grass_platfrom.tscn" id="3_2jai2"]
@@ -7,7 +7,6 @@
 [ext_resource type="FontFile" uid="uid://dkcdht4s7cl25" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="6_p1hrw"]
 [ext_resource type="PackedScene" uid="uid://da32pk1hqejhn" path="res://scenes/player.tscn" id="7_7xt7m"]
 [ext_resource type="PackedScene" uid="uid://bqvvhsaxhib8l" path="res://scenes/health_coin.tscn" id="8_414jg"]
-[ext_resource type="PackedScene" uid="uid://b5j8wvpjfpcc3" path="res://scenes/progress_bar.tscn" id="8_ew5ey"]
 [ext_resource type="Script" path="res://scripts/health_coin.gd" id="11_sk0ld"]
 [ext_resource type="PackedScene" uid="uid://2llqe8x3h76w" path="res://scenes/slime.tscn" id="11_urmd2"]
 
@@ -127,23 +126,6 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tks66"]
 size = Vector2(144, 20)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w7ht0"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5tm8m"]
-bg_color = Color(0.308796, 0.682216, 0.539548, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_luviv"]
-bg_color = Color(0.0962047, 0.0962048, 0.0962047, 1)
-expand_margin_left = 1.0
-expand_margin_top = 1.0
-expand_margin_right = 1.0
-expand_margin_bottom = 1.0
-shadow_color = Color(0, 0, 0, 0.27451)
-shadow_offset = Vector2(0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sybil"]
-bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dlanv"]
 size = Vector2(258.5, 31)
@@ -270,7 +252,31 @@ text = "Space to jump"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Label3" type="Label" parent="Labels" index="1"]
+[node name="Label4" type="Label" parent="Labels" index="1"]
+offset_left = -368.0
+offset_top = 40.0
+offset_right = -288.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0.12185, 0.226634, 0.257714, 1)
+theme_override_fonts/font = ExtResource("6_p1hrw")
+theme_override_font_sizes/font_size = 8
+text = "What's hidden here?"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label5" type="Label" parent="Labels" index="2"]
+offset_left = -206.0
+offset_top = 84.0
+offset_right = -44.0
+offset_bottom = 98.0
+theme_override_colors/font_color = Color(0.12185, 0.226634, 0.257714, 1)
+theme_override_fonts/font = ExtResource("6_p1hrw")
+theme_override_font_sizes/font_size = 8
+text = "A secret passage ?!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="Labels" index="3"]
 offset_left = 104.0
 offset_top = -128.0
 offset_right = 152.0
@@ -282,7 +288,7 @@ text = "Get all the coins!"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Label2" type="Label" parent="Labels" index="2"]
+[node name="Label2" type="Label" parent="Labels" index="4"]
 offset_left = 328.0
 offset_top = -72.0
 offset_right = 408.0
@@ -356,38 +362,6 @@ position = Vector2(85, -74)
 text = "
 Coins: 0"
 
-[node name="HealthBar" parent="UI" index="1" instance=ExtResource("8_ew5ey")]
-unique_name_in_owner = true
-z_index = 1
-offset_top = 0.0
-offset_right = 240.0
-offset_bottom = 4.0
-theme_override_styles/background = SubResource("StyleBoxEmpty_w7ht0")
-theme_override_styles/fill = SubResource("StyleBoxFlat_5tm8m")
-max_value = 100.0
-step = 10.0
-value = 50.0
-rounded = false
-fill_mode = 0
-
-[node name="DamageBar" type="ProgressBar" parent="UI/HealthBar" index="0"]
-z_index = -1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/background = SubResource("StyleBoxFlat_luviv")
-theme_override_styles/fill = SubResource("StyleBoxFlat_sybil")
-step = 1.0
-value = 80.0
-show_percentage = false
-
-[node name="TimerHealthBar" type="Timer" parent="UI/HealthBar" index="1"]
-wait_time = 0.3
-one_shot = true
-
 [node name="SecretArea" parent="." index="12"]
 collision_mask = 2
 
@@ -414,4 +388,3 @@ shape = SubResource("RectangleShape2D_yq4xg")
 [connection signal="body_entered" from="HeathCoins/Health Coin3" to="HeathCoins/Health Coin3" method="_on_body_entered"]
 [connection signal="body_entered" from="HeathCoins/Health Coin4" to="Game_Manager" method="_add_health_coin"]
 [connection signal="body_entered" from="HeathCoins/Health Coin4" to="HeathCoins/Health Coin4" method="_on_body_entered"]
-[connection signal="timeout" from="UI/HealthBar/TimerHealthBar" to="UI/HealthBar" method="_on_timer_timeout"]
