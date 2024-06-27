@@ -4,17 +4,17 @@
 [ext_resource type="Texture2D" uid="uid://cxniiul2d7sfd" path="res://assets/drawings/Overleaf-MC-sprite-sheet.png" id="2_3mt7y"]
 [ext_resource type="Texture2D" uid="uid://2phkto1yruus" path="res://assets/brackeys_platformer_assets/sprites/slime_green.png" id="3_ibrfk"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hbmux"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbi4e"]
 atlas = ExtResource("2_3mt7y")
-region = Rect2(0, 0, 325, 253)
+region = Rect2(0, 0, 343, 253)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4ai8"]
+atlas = ExtResource("2_3mt7y")
+region = Rect2(0, 506, 343, 253)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8tcwn"]
 atlas = ExtResource("2_3mt7y")
 region = Rect2(0, 253, 325, 253)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_keny0"]
-atlas = ExtResource("2_3mt7y")
-region = Rect2(0, 506, 325, 253)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8c1rr"]
 atlas = ExtResource("2_3mt7y")
@@ -88,13 +88,18 @@ region = Rect2(975, 759, 325, 253)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hbmux")
+"texture": SubResource("AtlasTexture_xbi4e")
 }, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4ai8")
+}],
+"loop": true,
+"name": &"atpower",
+"speed": 5.0
+}, {
+"frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8tcwn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_keny0")
 }],
 "loop": true,
 "name": &"attack",
@@ -190,8 +195,19 @@ script = ExtResource("1_k07dn")
 position = Vector2(2, -7)
 scale = Vector2(0.0839904, 0.0912797)
 sprite_frames = SubResource("SpriteFrames_st1fp")
-animation = &"death"
+animation = &"attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -6)
 shape = SubResource("CapsuleShape2D_t3fwg")
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 0.15
+one_shot = true
+
+[node name="AttackCooldownTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
+[connection signal="timeout" from="AttackCooldownTimer" to="." method="_on_attack_cooldown_timer_timeout"]
