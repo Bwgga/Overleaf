@@ -35,3 +35,4 @@ text = "Level 1"
 metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Level Buttons/Demo Level" to="." method="_on_demo_level_pressed"]
+[connection signal="pressed" from="Level Buttons/Level 1" to="." method="_on_level_1_pressed"]
