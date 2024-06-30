@@ -1,8 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://qoddefy5eafa"]
 
-[ext_resource type="Script" path="res://scenes/shooter.gd" id="1_08nrm"]
+[ext_resource type="Script" path="res://scripts/shooter.gd" id="1_08nrm"]
 [ext_resource type="Texture2D" uid="uid://2phkto1yruus" path="res://assets/brackeys_platformer_assets/sprites/slime_green.png" id="1_if2re"]
 [ext_resource type="PackedScene" uid="uid://d18dj64dnuojo" path="res://scenes/bullet.tscn" id="3_ojy1y"]
+
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yghx8"]
 atlas = ExtResource("1_if2re")

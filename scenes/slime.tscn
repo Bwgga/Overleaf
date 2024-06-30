@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/slime.gd" id="1_8iqmp"]
 [ext_resource type="Texture2D" uid="uid://cmltdmqueofsj" path="res://assets/brackeys_platformer_assets/sprites/slime_purple.png" id="1_mpw8x"]
-[ext_resource type="Script" path="res://scenes/damage_zone.gd" id="3_pdf2m"]
+[ext_resource type="Script" path="res://scripts/damage_zone.gd" id="3_pdf2m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8ck0f"]
 atlas = ExtResource("1_mpw8x")
