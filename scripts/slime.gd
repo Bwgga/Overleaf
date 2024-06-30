@@ -8,8 +8,6 @@ var direction = 1
 @onready var health_bar = %HealthBar
 @onready var damagezone = $Damagezone/Damagezone
 
-
-
 var last_dir : int
 var has_died : bool = false
 

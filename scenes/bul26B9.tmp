@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://d18dj64dnuojo"]
+
+[ext_resource type="Texture2D" uid="uid://vagdhw0cd4n7" path="res://assets/brackeys_platformer_assets/sprites/fruit.png" id="1_1pkvv"]
+[ext_resource type="Script" path="res://scripts/bullet.gd" id="1_vwnxo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwllq"]
+atlas = ExtResource("1_1pkvv")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t2f1v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwllq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_im27a"]
+radius = 3.0
+
+[node name="Bullet" type="CharacterBody2D"]
+script = ExtResource("1_vwnxo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(4.76837e-07, -2)
+scale = Vector2(0.6875, 0.6875)
+sprite_frames = SubResource("SpriteFrames_t2f1v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_im27a")

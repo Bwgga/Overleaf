@@ -1,0 +1,81 @@
+[gd_scene load_steps=11 format=3 uid="uid://qoddefy5eafa"]
+
+[ext_resource type="Script" path="res://scenes/shooter.gd" id="1_08nrm"]
+[ext_resource type="Texture2D" uid="uid://2phkto1yruus" path="res://assets/brackeys_platformer_assets/sprites/slime_green.png" id="1_if2re"]
+[ext_resource type="PackedScene" uid="uid://d18dj64dnuojo" path="res://scenes/bullet.tscn" id="3_ojy1y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yghx8"]
+atlas = ExtResource("1_if2re")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sfbuj"]
+atlas = ExtResource("1_if2re")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b3kjo"]
+atlas = ExtResource("1_if2re")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2n5x6"]
+atlas = ExtResource("1_if2re")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pidwx"]
+animations = [{
+"frames": [{
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_yghx8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sfbuj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b3kjo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2n5x6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o4qll"]
+size = Vector2(14, 12)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cd4sg"]
+radius = 179.011
+
+[node name="Shooter" type="CharacterBody2D"]
+script = ExtResource("1_08nrm")
+
+[node name="Shooter" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -12)
+sprite_frames = SubResource("SpriteFrames_pidwx")
+animation = &"idle"
+frame_progress = 0.108453
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_o4qll")
+
+[node name="Range" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="Range" type="CollisionShape2D" parent="Range"]
+shape = SubResource("CircleShape2D_cd4sg")
+
+[node name="Bullet" parent="." instance=ExtResource("3_ojy1y")]
+z_index = -1
+position = Vector2(0, -17)
+collision_mask = 2
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="shoot" from="." to="." method="_on_shoot"]
+[connection signal="shoot" from="." to="Bullet" method="_on_shooter_shoot"]
+[connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]
+[connection signal="hit" from="Bullet" to="." method="_on_bullet_hit"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
