@@ -17,7 +17,7 @@ texture = ExtResource("1_vuhml")
 centered = false
 
 [node name="woods mid" type="ParallaxLayer" parent="."]
-position = Vector2(0, -112)
+position = Vector2(0, -136)
 motion_mirroring = Vector2(320, 0)
 
 [node name="Middle" type="Sprite2D" parent="woods mid"]
