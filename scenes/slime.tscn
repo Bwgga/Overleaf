@@ -122,7 +122,7 @@ animations = [{
 size = Vector2(13, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j72ux"]
-size = Vector2(9, 14)
+size = Vector2(8.25, 12)
 
 [node name="Slime" type="CharacterBody2D"]
 script = ExtResource("1_8iqmp")
@@ -151,7 +151,11 @@ collision_mask = 2
 script = ExtResource("3_pdf2m")
 
 [node name="Damagezone" type="CollisionShape2D" parent="Damagezone"]
-position = Vector2(-0.5, -7)
+position = Vector2(-0.125, -6)
+shape = SubResource("RectangleShape2D_j72ux")
+
+[node name="Damagezone2" type="CollisionShape2D" parent="Damagezone"]
+position = Vector2(-7.75, -6)
 shape = SubResource("RectangleShape2D_j72ux")
 
 [node name="Timer" type="Timer" parent="Damagezone"]
