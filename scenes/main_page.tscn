@@ -10,7 +10,7 @@ script = ExtResource("1_lbto3")
 
 [node name="Paralax BG" parent="." instance=ExtResource("3_mo31y")]
 scroll_offset = Vector2(100, 0)
-scroll_base_offset = Vector2(0, 150)
+scroll_base_offset = Vector2(0, 300)
 scroll_limit_begin = Vector2(0, -100)
 scroll_limit_end = Vector2(1e+08, 1e+07)
 

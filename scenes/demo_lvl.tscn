@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dgadb3slcv0m0"]
+[gd_scene load_steps=26 format=3 uid="uid://dgadb3slcv0m0"]
 
 [ext_resource type="PackedScene" uid="uid://bi0b8kon5i34h" path="res://scenes/game.tscn" id="1_uc1ry"]
 [ext_resource type="PackedScene" uid="uid://b2jlt4fjomusb" path="res://scenes/grass_platfrom.tscn" id="3_2jai2"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://qoddefy5eafa" path="res://scenes/shooter.tscn" id="10_33fh8"]
 [ext_resource type="Script" path="res://scripts/health_coin.gd" id="11_sk0ld"]
 [ext_resource type="PackedScene" uid="uid://2llqe8x3h76w" path="res://scenes/slime.tscn" id="11_urmd2"]
+[ext_resource type="Texture2D" uid="uid://vg3w842yv2lw" path="res://assets/Screenshot 2024-07-10 165505.png" id="12_frp3g"]
 
 [sub_resource type="Animation" id="Animation_cwe7q"]
 length = 0.001
@@ -373,6 +374,10 @@ shape = SubResource("RectangleShape2D_5q05u")
 position = Vector2(-472, -98)
 
 [node name="Stats" parent="UI" index="0"]
+offset_left = -3.0
+offset_top = -9.5
+offset_right = 62.0
+offset_bottom = 13.5
 text = "
 Coins: 0"
 
@@ -386,6 +391,12 @@ shape = SubResource("RectangleShape2D_dlanv")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="SecretArea" index="1"]
 position = Vector2(-25, 73)
 shape = SubResource("RectangleShape2D_yq4xg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="13"]
+z_index = -100
+position = Vector2(67.0001, 148)
+scale = Vector2(10.7807, 1)
+texture = ExtResource("12_frp3g")
 
 [connection signal="body_entered" from="Killzone" to="Player" method="_on_killzone_body_entered"]
 [connection signal="body_entered" from="HeathCoins/Health Coin" to="Game_Manager" method="_add_health_coin"]
