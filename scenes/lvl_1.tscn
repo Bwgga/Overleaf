@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bmlnb67keuayr"]
+[gd_scene load_steps=9 format=3 uid="uid://bmlnb67keuayr"]
 
 [ext_resource type="PackedScene" uid="uid://bi0b8kon5i34h" path="res://scenes/game.tscn" id="1_h6wjp"]
 [ext_resource type="PackedScene" uid="uid://da32pk1hqejhn" path="res://scenes/player.tscn" id="2_i04xv"]
 [ext_resource type="FontFile" uid="uid://dkcdht4s7cl25" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="3_8eils"]
 [ext_resource type="PackedScene" uid="uid://bju3scse1nrsb" path="res://scenes/bg.tscn" id="4_1dbwh"]
 [ext_resource type="PackedScene" uid="uid://2llqe8x3h76w" path="res://scenes/slime.tscn" id="5_p4usl"]
+[ext_resource type="PackedScene" uid="uid://pvvbwufh5fdf" path="res://scenes/damagezone.tscn" id="6_qbkfg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b6rdm"]
 size = Vector2(32, 4)
@@ -88,3 +89,6 @@ autowrap_mode = 2
 
 [node name="Slime" parent="." index="10" instance=ExtResource("5_p4usl")]
 position = Vector2(827, -22)
+
+[node name="Damagezone" parent="." index="11" instance=ExtResource("6_qbkfg")]
+position = Vector2(776, -24)
