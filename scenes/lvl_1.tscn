@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bmlnb67keuayr"]
+[gd_scene load_steps=11 format=3 uid="uid://bmlnb67keuayr"]
 
 [ext_resource type="PackedScene" uid="uid://bi0b8kon5i34h" path="res://scenes/game.tscn" id="1_h6wjp"]
 [ext_resource type="PackedScene" uid="uid://da32pk1hqejhn" path="res://scenes/player.tscn" id="2_i04xv"]
@@ -12,6 +12,12 @@ size = Vector2(32, 4)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_f5nqf"]
 normal = Vector2(1, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_teujp"]
+size = Vector2(7.375, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jvi8c"]
+size = Vector2(13, 12)
 
 [node name="Game" instance=ExtResource("1_h6wjp")]
 
@@ -90,5 +96,15 @@ autowrap_mode = 2
 [node name="Slime" parent="." index="10" instance=ExtResource("5_p4usl")]
 position = Vector2(827, -22)
 
+[node name="Damagezone" parent="Slime" index="4" instance=ExtResource("6_qbkfg")]
+
+[node name="dmgZone1" type="CollisionShape2D" parent="Slime/Damagezone" index="0"]
+position = Vector2(4, -6)
+shape = SubResource("RectangleShape2D_teujp")
+
 [node name="Damagezone" parent="." index="11" instance=ExtResource("6_qbkfg")]
 position = Vector2(776, -24)
+
+[node name="DmgZone1" type="CollisionShape2D" parent="Damagezone" index="0"]
+position = Vector2(-1.5, 0)
+shape = SubResource("RectangleShape2D_jvi8c")

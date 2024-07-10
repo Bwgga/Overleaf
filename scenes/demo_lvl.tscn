@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dgadb3slcv0m0"]
+[gd_scene load_steps=25 format=3 uid="uid://dgadb3slcv0m0"]
 
 [ext_resource type="PackedScene" uid="uid://bi0b8kon5i34h" path="res://scenes/game.tscn" id="1_uc1ry"]
 [ext_resource type="PackedScene" uid="uid://b2jlt4fjomusb" path="res://scenes/grass_platfrom.tscn" id="3_2jai2"]
@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://dkcdht4s7cl25" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="6_p1hrw"]
 [ext_resource type="PackedScene" uid="uid://da32pk1hqejhn" path="res://scenes/player.tscn" id="7_7xt7m"]
 [ext_resource type="PackedScene" uid="uid://bqvvhsaxhib8l" path="res://scenes/health_coin.tscn" id="8_414jg"]
+[ext_resource type="PackedScene" uid="uid://pvvbwufh5fdf" path="res://scenes/damagezone.tscn" id="10_6rj86"]
 [ext_resource type="PackedScene" uid="uid://qoddefy5eafa" path="res://scenes/shooter.tscn" id="10_33fh8"]
 [ext_resource type="Script" path="res://scripts/health_coin.gd" id="11_sk0ld"]
 [ext_resource type="PackedScene" uid="uid://2llqe8x3h76w" path="res://scenes/slime.tscn" id="11_urmd2"]
@@ -127,6 +128,9 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tks66"]
 size = Vector2(144, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5q05u"]
+size = Vector2(6.23438, 12)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dlanv"]
 size = Vector2(258.5, 31)
@@ -358,6 +362,12 @@ script = ExtResource("11_sk0ld")
 
 [node name="Slime" parent="Ennemies" index="0" instance=ExtResource("11_urmd2")]
 position = Vector2(85, -74)
+
+[node name="Damagezone" parent="Ennemies/Slime" index="4" instance=ExtResource("10_6rj86")]
+
+[node name="dmgZone1" type="CollisionShape2D" parent="Ennemies/Slime/Damagezone" index="0"]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_5q05u")
 
 [node name="Shooter" parent="Ennemies" index="1" instance=ExtResource("10_33fh8")]
 position = Vector2(-472, -98)
