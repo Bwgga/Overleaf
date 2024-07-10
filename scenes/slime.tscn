@@ -121,6 +121,8 @@ animations = [{
 size = Vector2(14, 14)
 
 [node name="Slime" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 9
 script = ExtResource("1_8iqmp")
 
 [node name="Slime" type="AnimatedSprite2D" parent="."]
@@ -133,10 +135,12 @@ frame_progress = 0.646194
 [node name="RayCastRight" type="RayCast2D" parent="."]
 position = Vector2(0, -6)
 target_position = Vector2(8, 0)
+collision_mask = 9
 
 [node name="RayCastLeft" type="RayCast2D" parent="."]
 position = Vector2(0, -6)
 target_position = Vector2(-8, 0)
+collision_mask = 9
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7)

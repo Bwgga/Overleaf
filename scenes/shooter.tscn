@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://2phkto1yruus" path="res://assets/brackeys_platformer_assets/sprites/slime_green.png" id="1_if2re"]
 [ext_resource type="PackedScene" uid="uid://d18dj64dnuojo" path="res://scenes/bullet.tscn" id="3_ojy1y"]
 
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_yghx8"]
 atlas = ExtResource("1_if2re")
 region = Rect2(0, 24, 24, 24)
@@ -61,6 +60,7 @@ position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_o4qll")
 
 [node name="Range" type="Area2D" parent="."]
+collision_layer = 9
 collision_mask = 2
 
 [node name="Range" type="CollisionShape2D" parent="Range"]
