@@ -53,6 +53,7 @@ _data = {
 
 [sub_resource type="Animation" id="Animation_g832c"]
 length = 0.001
+loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -310,9 +311,6 @@ autowrap_mode = 2
 [node name="SecretTileMap" parent="." index="7"]
 z_index = 5
 layer_0/tile_data = PackedInt32Array(393201, 262145, 2, 393203, 262145, 1, 393202, 327681, 0, 262143, 1, 1, 262142, 1, 1, 262141, 1, 1, 327677, 1, 1, 327678, 1, 1, 327679, 1, 1, 393215, 1, 1, 393214, 1, 1, 393213, 1, 1, 393212, 1, 1, 327668, 262145, 12, 327669, 262145, 12, 327670, 262145, 12, 327671, 262145, 12, 327672, 262145, 12, 327673, 262145, 12, 327674, 262145, 12, 327675, 262145, 12, 393211, 262145, 12, 393210, 262145, 12, 393209, 262145, 12, 393208, 262145, 12, 393207, 262145, 12, 393206, 262145, 12, 393205, 262145, 12, 393204, 262145, 12, 458740, 262145, 12, 458741, 262145, 12, 458742, 262145, 12, 458743, 262145, 12, 458744, 262145, 12, 458745, 262145, 12, 458746, 262145, 12, 458747, 262145, 12)
-
-[node name="CollisionShape2D" parent="Killzone" index="1"]
-position = Vector2(-8, 147)
 
 [node name="DeathWater" type="CollisionShape2D" parent="Killzone" index="2"]
 position = Vector2(-128, 56)
