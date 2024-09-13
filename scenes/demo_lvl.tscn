@@ -397,7 +397,6 @@ scale = Vector2(10.7807, 1)
 texture = ExtResource("12_frp3g")
 
 [connection signal="body_entered" from="Killzone" to="Player" method="_on_killzone_body_entered"]
-[connection signal="body_entered" from="HeathCoins/Health Coin" to="Game_Manager" method="_add_health_coin"]
 [connection signal="body_entered" from="HeathCoins/Health Coin" to="HeathCoins/Health Coin" method="_on_body_entered"]
 [connection signal="body_entered" from="HeathCoins/Health Coin2" to="Game_Manager" method="_add_health_coin"]
 [connection signal="body_entered" from="HeathCoins/Health Coin2" to="HeathCoins/Health Coin2" method="_on_body_entered"]
