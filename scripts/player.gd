@@ -12,11 +12,15 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var attack_timer = $AttackTimer
 @onready var attack_cooldown_timer = $AttackCooldownTimer
 @onready var collision_shape_2d = $CollisionShape2D
+@onready var atp_location = $ATPLocation
+
 
 var last_dir : int
 
 var is_attacking : bool = false
+var is_atping : bool = false
 var can_attack  : bool = true
+var can_atp : bool = true
 
 func _physics_process(delta):
 	# Add the gravity
@@ -55,12 +59,21 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("attack") and can_attack:
 			is_attacking = true
 			can_attack = false
-			#play an attack animation
 			attack_timer.start()
+		
+		#atpower special attack
+		if Input.is_action_just_pressed("atpower") and can_atp:
+			#add checks for legality of atpower (sunlight mechanics)
+			is_atping = true
+			can_atp = false
+			atpower()
+			
 		
 		# play animations
 		if is_attacking:
 			animated_sprite.play("attack")
+		elif is_atping:
+			animated_sprite.play("atpower")
 		elif not is_on_floor():
 				animated_sprite.play("jump")
 		else:
@@ -82,6 +95,13 @@ func _physics_process(delta):
 
 		move_and_slide()
 
+func atpower():
+	const PROJECTILE = preload("res://scenes/atp_projectile.tscn") #loads at game start
+	var new_projectile = PROJECTILE.instantiate()
+	new_projectile.global_position = $ATPLocation.global_position
+	$ATPLocation.add_child(new_projectile)
+	is_atping = false
+	can_atp = true
 
 func _on_attack_timer_timeout():
 	is_attacking = false

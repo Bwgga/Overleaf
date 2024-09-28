@@ -1,16 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://de4amyjdod0oq"]
+[gd_scene load_steps=6 format=3 uid="uid://de4amyjdod0oq"]
 
-[ext_resource type="Texture2D" uid="uid://vagdhw0cd4n7" path="res://assets/brackeys_platformer_assets/sprites/fruit.png" id="1_aqb0l"]
+[ext_resource type="Script" path="res://scripts/atp_projectile.gd" id="1_lnps8"]
+[ext_resource type="Texture2D" uid="uid://cxniiul2d7sfd" path="res://assets/drawings/Overleaf-MC-sprite-sheet.png" id="1_qt4vy"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_q0d3o"]
-atlas = ExtResource("1_aqb0l")
-region = Rect2(3, 6, 10, 9)
+[sub_resource type="AtlasTexture" id="AtlasTexture_eiiqn"]
+atlas = ExtResource("1_qt4vy")
+region = Rect2(241, 562, 75, 75)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e0tw1"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_q0d3o")
+"texture": SubResource("AtlasTexture_eiiqn")
 }],
 "loop": true,
 "name": &"default",
@@ -18,12 +19,20 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_11gjb"]
-radius = 7.0
+radius = 5.0
 
 [node name="ATProjectile" type="Area2D"]
+collision_layer = 16
+collision_mask = 4
+script = ExtResource("1_lnps8")
 
 [node name="Projectile" type="AnimatedSprite2D" parent="."]
+position = Vector2(-9.53674e-07, -1.43051e-06)
+scale = Vector2(0.116667, 0.116667)
 sprite_frames = SubResource("SpriteFrames_e0tw1")
 
 [node name="Shape" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_11gjb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
