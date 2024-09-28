@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-const SPEED = 150.0
-const JUMP_VELOCITY = -300.0
+const SPEED = 125.0
+const JUMP_VELOCITY = -275.0
 const ATTACK_BOOST = 2.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -11,6 +11,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var health_bar = %HealthBar
 @onready var attack_timer = $AttackTimer
 @onready var attack_cooldown_timer = $AttackCooldownTimer
+@onready var collision_shape_2d = $CollisionShape2D
 
 var last_dir : int
 
@@ -33,17 +34,22 @@ func _physics_process(delta):
 		# check for which direction and flip animations
 		if direction > 0:
 			animated_sprite.flip_h = false
+			collision_shape_2d.position.x = 0
 			last_dir = 1
 		elif direction < 0: 
 			animated_sprite.flip_h = true
+			collision_shape_2d.position.x = 4
 			last_dir = -1
 		else:
 			if last_dir > 0:
 				animated_sprite.flip_h = false
+				collision_shape_2d.position.x = 0
 			elif last_dir < 0:
 				animated_sprite.flip_h = true
+				collision_shape_2d.position.x = 4
 			else:
 				animated_sprite.flip_h = false
+				collision_shape_2d.position.x = 0
 		
 		#sword attack
 		if Input.is_action_just_pressed("attack") and can_attack:

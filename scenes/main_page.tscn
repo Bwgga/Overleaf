@@ -10,51 +10,53 @@ script = ExtResource("1_lbto3")
 
 [node name="Paralax BG" parent="." instance=ExtResource("3_mo31y")]
 scroll_offset = Vector2(100, 0)
-scroll_limit_begin = Vector2(0, -56)
-scroll_limit_end = Vector2(320, 130)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-process_mode = 3
-position = Vector2(-144, -56)
-anchor_mode = 0
-limit_smoothed = true
-position_smoothing_enabled = true
+scroll_base_offset = Vector2(0, 300)
+scroll_limit_begin = Vector2(0, -100)
+scroll_limit_end = Vector2(1e+08, 1e+07)
 
 [node name="Play" type="Button" parent="."]
-offset_left = -80.0
-offset_top = 8.0
-offset_right = -16.0
-offset_bottom = 32.0
+offset_left = -75.0
+offset_top = 54.0
+offset_right = -11.0
+offset_bottom = 78.0
+focus_neighbor_right = NodePath("../Quit")
+focus_neighbor_bottom = NodePath("../Settings")
 theme_override_fonts/font = ExtResource("1_r5t2c")
 theme_override_font_sizes/font_size = 16
 text = "Play"
 metadata/_edit_use_anchors_ = true
 
 [node name="Quit" type="Button" parent="."]
-offset_left = 40.0
-offset_top = 8.0
-offset_right = 104.0
-offset_bottom = 32.0
+offset_left = 45.0
+offset_top = 54.0
+offset_right = 109.0
+offset_bottom = 78.0
+focus_neighbor_left = NodePath("../Play")
+focus_neighbor_bottom = NodePath("../Credits")
 theme_override_fonts/font = ExtResource("1_r5t2c")
 theme_override_font_sizes/font_size = 16
 text = "Quit"
 metadata/_edit_use_anchors_ = true
 
 [node name="Settings" type="Button" parent="."]
-offset_left = -104.0
-offset_top = 48.0
-offset_right = 8.0
-offset_bottom = 72.0
+offset_left = -103.0
+offset_top = 105.0
+offset_right = 9.0
+offset_bottom = 129.0
+focus_neighbor_top = NodePath("../Play")
+focus_neighbor_right = NodePath("../Credits")
 theme_override_fonts/font = ExtResource("1_r5t2c")
 theme_override_font_sizes/font_size = 16
 text = "Settings"
 metadata/_edit_use_anchors_ = true
 
 [node name="Credits" type="Button" parent="."]
-offset_left = 24.0
-offset_top = 48.0
-offset_right = 124.0
-offset_bottom = 72.0
+offset_left = 26.0
+offset_top = 105.0
+offset_right = 126.0
+offset_bottom = 129.0
+focus_neighbor_left = NodePath("../Settings")
+focus_neighbor_top = NodePath("../Quit")
 theme_override_fonts/font = ExtResource("1_r5t2c")
 theme_override_font_sizes/font_size = 16
 text = "Credits

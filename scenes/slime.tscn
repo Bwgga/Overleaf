@@ -1,8 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://2llqe8x3h76w"]
+[gd_scene load_steps=18 format=3 uid="uid://2llqe8x3h76w"]
 
 [ext_resource type="Script" path="res://scripts/slime.gd" id="1_8iqmp"]
 [ext_resource type="Texture2D" uid="uid://cmltdmqueofsj" path="res://assets/brackeys_platformer_assets/sprites/slime_purple.png" id="1_mpw8x"]
-[ext_resource type="Script" path="res://scripts/damage_zone.gd" id="3_pdf2m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8ck0f"]
 atlas = ExtResource("1_mpw8x")
@@ -119,45 +118,30 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tpg1e"]
-size = Vector2(13, 14)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_j72ux"]
-size = Vector2(8.25, 12)
+size = Vector2(14, 14)
 
 [node name="Slime" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 9
 script = ExtResource("1_8iqmp")
 
 [node name="Slime" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_j0bh8")
-animation = &"death"
+animation = &"idle"
 autoplay = "idle"
+frame_progress = 0.646194
 
 [node name="RayCastRight" type="RayCast2D" parent="."]
 position = Vector2(0, -6)
 target_position = Vector2(8, 0)
+collision_mask = 9
 
 [node name="RayCastLeft" type="RayCast2D" parent="."]
 position = Vector2(0, -6)
 target_position = Vector2(-8, 0)
+collision_mask = 9
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -7)
+position = Vector2(0, -7)
 shape = SubResource("RectangleShape2D_tpg1e")
-
-[node name="Damagezone" type="Area2D" parent="."]
-position = Vector2(4, 0)
-collision_mask = 2
-script = ExtResource("3_pdf2m")
-
-[node name="Damagezone" type="CollisionShape2D" parent="Damagezone"]
-position = Vector2(-0.125, -6)
-shape = SubResource("RectangleShape2D_j72ux")
-
-[node name="Damagezone2" type="CollisionShape2D" parent="Damagezone"]
-position = Vector2(-7.75, -6)
-shape = SubResource("RectangleShape2D_j72ux")
-
-[node name="Timer" type="Timer" parent="Damagezone"]
-
-[connection signal="body_entered" from="Damagezone" to="." method="_on_damagezone_body_entered"]

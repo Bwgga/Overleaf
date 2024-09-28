@@ -6,7 +6,8 @@ var direction = 1
 @onready var ray_cast_right = $RayCastRight
 @onready var ray_cast_left = $RayCastLeft
 @onready var health_bar = %HealthBar
-@onready var damagezone = $Damagezone/Damagezone
+@onready var damagezone = $Damagezone/dmgZone1
+
 
 var last_dir : int
 var has_died : bool = false
@@ -60,8 +61,6 @@ func flip(state):
 	slime.flip_h = state
 	if state == true:
 		damagezone.position.x = -4
+	else:
+		damagezone.position.x = 4
 
-func _on_damagezone_body_entered(body):
-	health_bar.get_hurt(10)
-	
-	

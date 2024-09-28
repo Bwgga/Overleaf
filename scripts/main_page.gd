@@ -1,5 +1,10 @@
 extends Node2D
 
+@onready var play = $Play
+
+# put focus on play button
+func _ready():
+	play.grab_focus()
 
 # Play button
 func _on_play_pressed():
