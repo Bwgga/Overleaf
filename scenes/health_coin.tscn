@@ -28,6 +28,7 @@ animations = [{
 radius = 5.09902
 
 [node name="Health Coin" type="Area2D"]
+collision_mask = 2
 
 [node name="HealthCoin" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -1)

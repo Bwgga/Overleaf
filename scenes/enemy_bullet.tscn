@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://dvlqcm5ssmy77"]
+
+[ext_resource type="Script" path="res://scripts/EnemyBullet.gd" id="1_wykw5"]
+[ext_resource type="Texture2D" uid="uid://vagdhw0cd4n7" path="res://assets/brackeys_platformer_assets/sprites/fruit.png" id="2_oeej3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18vp1"]
+atlas = ExtResource("2_oeej3")
+region = Rect2(3, 54, 10, 9)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bb0j3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_18vp1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mktfl"]
+size = Vector2(10, 9.5)
+
+[node name="EnemyBullet" type="Area2D"]
+collision_layer = 4
+script = ExtResource("1_wykw5")
+
+[node name="Projectile" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.936944, 0.937934)
+sprite_frames = SubResource("SpriteFrames_bb0j3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mktfl")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

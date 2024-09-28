@@ -360,7 +360,7 @@ script = ExtResource("11_sk0ld")
 position = Vector2(85, -74)
 
 [node name="Shooter" parent="Ennemies" index="1" instance=ExtResource("10_33fh8")]
-position = Vector2(-472, -98)
+position = Vector2(-408, -32)
 
 [node name="Stats" parent="UI" index="0"]
 text = "
